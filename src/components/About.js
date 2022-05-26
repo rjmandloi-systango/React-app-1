@@ -2,22 +2,22 @@ import React, { useState } from 'react'
 
 export default function About() {
     const [myStyle, setMyStyle] = useState({
-        color: 'black',
+        color: '#212529',
         backgroundColor: "white"
     });
     const [displayMode, setdisplayMode] = useState("Enable dark mode");
    
     const toggleStyle = () => {
-        if (myStyle.color == 'black') {
+        if (myStyle.color == '#212529') {
             setMyStyle({
                 border : "1px solid white",
                 color: 'white',
-                backgroundColor: "black"
+                backgroundColor: "#212529"
             });
             setdisplayMode("Enable light mode");
         } else {
             setMyStyle({
-                color: 'black',
+                color: '#212529',
                 backgroundColor: "white"
             });
             setdisplayMode("Enable Dark mode");
