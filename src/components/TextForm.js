@@ -8,15 +8,20 @@ export default function TextForm(props) {
         let newText = text.toUpperCase();
         // setText(text.toUpperCase());
         setText(newText);
+        props.showAlert("converted to uppercase" , "success")
     }
     const lowerCaseClick = () => {
         // console.log("upperCaseClick");
         let newText = text.toLowerCase();
         // setText(text.toUpperCase());
         setText(newText);
+        props.showAlert("converted to Lowercase" , "success")
+
     }
     const clearClick = () => {
         setText("");
+        props.showAlert("Text cleared" , "success")
+
     }
     const handleOnChnage = (event) => {
         // console.log("handleOnChnage");
@@ -29,7 +34,7 @@ export default function TextForm(props) {
                 <h3>{props.heading}</h3>
                 <div className="mb-3">
                     <label htmlFor="myBox" className="form-label">{props.textInputTitle}</label>
-                    <textarea className="form-control" id="myBox" value={text} onChange={handleOnChnage} style={{backgroundColor : props.mode==='dark' ? 'grey' :'white' , color:'white'}} rows="6"></textarea>
+                    <textarea className="form-control" id="myBox" value={text} onChange={handleOnChnage} style={{backgroundColor : props.mode==='dark' ? 'grey' :'white' , color : props.mode==='dark' ? 'white' :'black'}} rows="6"></textarea>
                 </div>
                 <button className="btn btn-primary " onClick={clearClick}>Clear text</button>
                 <button className="btn btn-primary ms-3" onClick={lowerCaseClick}>Lower case</button>
